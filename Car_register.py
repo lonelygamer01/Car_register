@@ -71,11 +71,9 @@ if update == "y":
     c1.update_model(file_name, model_name)
     c1.save_to_json("{}_data.json".format(c1.plate_number))
     c1.get_info()
+else:
+    pass
 
-
-'''c2 = Car(brand, model, Class, year, type, color, weight, gear_box, engine, hp, plate_number, km, condition)
-c2.save_to_json("{},{}_data.json".format(c1.brand,c1.model))
-c2.get_info()'''
 
 
 
