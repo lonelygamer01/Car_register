@@ -1,0 +1,15 @@
+{
+   "Brand": "Opel",
+   "Model": "Astra",
+   "Class": "G",
+   "Year": "2001",
+   "Type": "sedan",
+   "Color": "yellow",
+   "Weight": "1300",
+   "Gearbox": "automatic",
+   "Engine": "petrol",
+   "Hp": "105",
+   "Plate_number": "111-111G",
+   "Km": "150000",
+   "Condition": "used"
+}
