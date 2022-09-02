@@ -1,0 +1,15 @@
+{
+  "Brand": "BMW",
+  "Model": "85000",
+  "Class": "318i",
+  "Year": "1998",
+  "Type": "sedan",
+  "Color": "turquise",
+  "Weight": "1100",
+  "Gearbox": "automatic",
+  "Engine": "petrol",
+  "Hp": "114",
+  "Plate_number": "111-111A",
+  "Km": "56000",
+  "Condition": "used"
+}
