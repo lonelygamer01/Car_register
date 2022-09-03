@@ -1,11 +1,19 @@
 import time
 import json
+import sys
+
+animation = "|-"
+
 print("C A R - R E G I S T E R")
 time.sleep(2)
 print("L O A D I N G")
+for i in range(50):
+    time.sleep(0.2)
+    sys.stdout.write("\r" + animation[i % len(animation)])
+    sys.stdout.flush()
 time.sleep(2)
 
-print("Enter a number from the menu")
+print("\nEnter a number from the menu")
 time.sleep(1)
 print("1. Register")
 print("2. Log-In")
@@ -22,15 +30,26 @@ login_info = {
 }
 
 if number == 1:
+    with open("User_data.json", "r") as file_check:
+        data = json.loads(file_check.read())
+        Username = data["Username"]
+        Password = data["Password"]
+        if Username != "" and Password != "":
+            print("You already have an account please Log-In to it!")
+        else:    
 
-    username = input("Enter a username: \n")
-    password = input("Enter a password: \n")
 
-    login_info["username"] = username
-    login_info["password"] = password
-    time.sleep(2)
-    print('Registration complete') #still on development
+            username = input("Enter a username: \n")
+            password = input("Enter a password: \n")
 
+            user_data = {"Username" : username, "Password" : password}
+            with open("User_data.json", "w") as file_reg:
+                file_reg.write(json.dumps(user_data, indent=3))
+                file_reg.close()
+            
+            time.sleep(2)
+            print('Registration complete') #still on development
+        file_check.close()
 
 
 
@@ -38,12 +57,20 @@ if number == 2:
     username = input("Enter the username: \n")
     password = input("Enter the password: \n")
 
-    if login_info["username"] == username and login_info["password"] == password:
+    with open("User_data.json", "r") as file_log:
+        data = json.loads(file_log.read())
+        Username = data["Username"]
+        Password = data["Password"]
+
+    if username == Username and password == Password:
         time.sleep(2)
-        print("Log-In was successful...")
-        print("Enter a number from the menu")
+        print("Log-In was successful...\n")
+        file_log.close()
+        print("Enter a number from the menu\n")
         print("1. Register a new car\n2. See the details of a car\n3. Edit data of a car")
+
         number = int(input("Enter the number: \n"))
+
         if number == 1:
             brand = input("Brand: ")
             model = input("Model: ")
