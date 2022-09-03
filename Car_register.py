@@ -24,10 +24,6 @@ time.sleep(1)
 
 number = int(input("Enter the number: \n"))
 
-login_info = {
-    'username':'Daniel',
-    'password':'password'
-}
 
 if number == 1:
     with open("User_data.json", "r") as file_check:
