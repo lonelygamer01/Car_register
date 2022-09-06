@@ -1,3 +1,4 @@
+from ast import Pass
 import time
 import json
 import sys
@@ -17,17 +18,12 @@ print("\nEnter a number from the menu")
 time.sleep(1)
 print("1. Register")
 print("2. Log-In")
-print("3. Edit username")
-print("4. Edit password")
-print("5. Delete Account")
+
 time.sleep(1)
 
 number = int(input("Enter the number: \n"))
 
-login_info = {
-    'username':'Daniel',
-    'password':'password'
-}
+
 
 if number == 1:
     with open("User_data.json", "r") as file_check:
@@ -48,7 +44,7 @@ if number == 1:
                 file_reg.close()
             
             time.sleep(2)
-            print('Registration complete') #still on development
+            print('Registration complete') 
         file_check.close()
 
 
@@ -67,7 +63,7 @@ if number == 2:
         print("Log-In was successful...\n")
         file_log.close()
         print("Enter a number from the menu\n")
-        print("1. Register a new car\n2. See the details of a car\n3. Edit data of a car")
+        print("1. Register a new car\n2. See the details of a car\n3. Edit data of a car\n4. Edit username\n5. Edit password\n6. Delete Account")
 
         number = int(input("Enter the number: \n"))
 
@@ -187,13 +183,63 @@ if number == 2:
             else:
                 pass
 
+        if number == 2:
+            pass
+        if number == 3:
+            pass
+        if number == 4:
+            old_username = input("Enter the current username:\n")
+            with open ("User_data.json", "r") as file_edit1:
+                data = json.loads(file_edit1.read())
+                Username = data["Username"]
 
+                if old_username == Username:
+                    new_username = input("Enter the new username here please:\n")
+                    with open("User_data.json", "r") as file_edit2:
+                        data_for_edit = json.load(file_edit2)
+                    data_for_edit["Username"] = new_username
+                    with open("User_data.json", "w") as file_edit2:
+                        json.dump(data_for_edit, file_edit2, indent=3)    
+                    time.sleep(2)
+                    print("Editing was successful...")    
+                    file_edit2.close()
+
+                if old_username != Username:
+                    print('The username isnt correct...')
+                    
+                file_edit1.close()
+
+        if number == 5:
+            old_password = input("Enter the current password:\n")
+            with open ("User_data.json", "r") as file_edit1:
+                data = json.loads(file_edit1.read())
+                Password = data["Password"]
+
+                if old_password == Password:
+                    new_password = input("Enter the new password here please:\n")
+                    with open("User_data.json", "r") as file_edit2:
+                        data_for_edit = json.load(file_edit2)
+                    data_for_edit["Password"] = new_password
+                    with open("User_data.json", "w") as file_edit2:
+                        json.dump(data_for_edit, file_edit2, indent=3)    
+                    time.sleep(2)
+                    print("Editing was successful...")    
+                    file_edit2.close()
+                    
+                if old_password != Password:
+                    print('The password isnt correct...')
+                    
+                file_edit1.close()
+
+        if number == 6:
+            pass
 
     else:
         time.sleep(2)
         print("Log-In information is not correct...")
         
 
+    
 
 
 
