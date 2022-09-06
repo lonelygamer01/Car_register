@@ -24,7 +24,6 @@ time.sleep(1)
 number = int(input("Enter the number: \n"))
 
 
-
 if number == 1:
     with open("User_data.json", "r") as file_check:
         data = json.loads(file_check.read())
