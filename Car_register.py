@@ -1,4 +1,4 @@
-from ast import Pass
+
 import time
 import json
 import sys
@@ -56,7 +56,7 @@ if number == 2:
         data = json.loads(file_log.read())
         Username = data["Username"]
         Password = data["Password"]
-
+    #If the username and the password which entered below is matching with the data in the database...
     if username == Username and password == Password:
         time.sleep(2)
         print("Log-In was successful...\n")
@@ -65,7 +65,7 @@ if number == 2:
         print("1. Register a new car\n2. See the details of a car\n3. Edit data of a car\n4. Edit username\n5. Edit password\n6. Delete Account")
 
         number = int(input("Enter the number: \n"))
-
+        #Registerin a new car IN DEVELOPMENT!!
         if number == 1:
             brand = input("Brand: ")
             model = input("Model: ")
@@ -181,11 +181,13 @@ if number == 2:
                 print('New km is: {}'.format(c1.km))
             else:
                 pass
-
+        #Displaying the data of a car from the database...
         if number == 2:
             pass
+        #Editing a cars details in the database...
         if number == 3:
             pass
+        #Editing username FINISHED
         if number == 4:
             old_username = input("Enter the current username:\n")
             with open ("User_data.json", "r") as file_edit1:
@@ -207,7 +209,7 @@ if number == 2:
                     print('The username isnt correct...')
                     
                 file_edit1.close()
-
+        #Editing password FINISHED
         if number == 5:
             old_password = input("Enter the current password:\n")
             with open ("User_data.json", "r") as file_edit1:
@@ -232,7 +234,7 @@ if number == 2:
 
         if number == 6:
             pass
-
+    #If the entered data is not matching with the data in the database...
     else:
         time.sleep(2)
         print("Log-In information is not correct...")
