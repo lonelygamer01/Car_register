@@ -181,9 +181,31 @@ if number == 2:
                 print('New km is: {}'.format(c1.km))
             else:
                 pass
-        #Displaying the data of a car from the database...
+        #Displaying the data of a car from the database FINISHED
         if number == 2:
-            pass
+            plate_number = input("Enter the platenumber of the car please:\n")
+            def get_info(filename):
+                with open(filename, "r") as file_info:
+                    data = json.loads(file_info.read())
+                print(
+                    "Brand: {}".format(data["Brand"]),
+                    "Model: {}".format(data["Model"]),
+                    "Class: {}".format(data["Class"]),
+                    "Year: {}".format(data["Year"]),
+                    "Type: {}".format(data["Type"]),
+                    "Color: {}".format(data["Color"]),
+                    "Weight: {}".format(data["Weight"]),
+                    "Gearbox: {}".format(data["Gearbox"]),
+                    "Engine: {}".format(data["Engine"]),
+                    "Hp: {}".format(data["Hp"]),
+                    "Plate number: {}".format(data["Plate_number"]),
+                    "Km: {}".format(data["Km"]),
+                    "Condition: {}".format(data["Condition"]),
+
+                )
+            plate_number_to_json = "{}_data.json".format(plate_number)
+
+            get_info(plate_number_to_json)
         #Editing a cars details in the database...
         if number == 3:
             pass
@@ -233,7 +255,28 @@ if number == 2:
                 file_edit1.close()
 
         if number == 6:
-            pass
+            username_delete = input("Enter the username:\n")
+            password_delete = input("Enter the password:\n")
+            with open("User_data.json", "r") as file_delete1:
+                data = json.loads(file_delete1.read())
+                Username = data["Username"]
+                Password = data["Password"]
+
+                if username_delete == Username and password_delete == Password:
+                    time.sleep(2)
+                    print("Log-In was successful")
+                    file_delete1.close()
+                    time.sleep(1)
+                    ensure = input("Press y to continue deleting details...")
+                    if ensure == "y":
+                        data_delete = {"Username": "", "Password": ""}
+                        with open("User_data.json", "w") as file_delete2:
+                            file_delete2.write(json.dumps(data_delete, indent=3))
+                            file_delete2.close()
+                        time.sleep(2)
+                        print("Account successfully deleted...")    
+
+
     #If the entered data is not matching with the data in the database...
     else:
         time.sleep(2)
