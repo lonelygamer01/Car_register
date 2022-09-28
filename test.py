@@ -1,49 +1,30 @@
 
 #THIS FILE IS ONLY FOR TESTING DIFFERENT PARTS OF THE PROGRAM WITHOUT RUNNING THE WHOLE CODE... I KKNOW SMART :))
 
+
 import json
 
+class Console_App:
+    
+    def login_page(self):
+        print("Nem")
+    def register_page(self):
+        print("Igen")
+        
+
+        
+
+            
 
 
 
-'''plate_number = input("Enter the platenumber of the car please:\n")
-def get_info(filename):
-    with open(filename, "r") as file_info:
-        data = json.loads(file_info.read())
-    print(
-        "Brand: {}".format(data["Brand"]),
-        "Model: {}".format(data["Model"]),
-        "Class: {}".format(data["Class"]),
-        "Plate number: {}".format(data["Plate_number"]),
-    )
-plate_number_to_json = "{}_data.json".format(plate_number)
 
-get_info(plate_number_to_json)'''
 
-brand = input("Brand: ")
-model = input("Model: ")
-Class = input("Class: ")
-year = input("Year: ")
-type = input("Type: ")
-color = input("Color: ")
-weight = input("Weight: ")
-gear_box = input("Gearbox type: ")
-engine = input("Engine type: ")
-hp = input("Horsepower: ")
-plate_number = input("Platenumber: ")
-km = input("Km: ")
-condition = input("Condition: ")
 
-file_name = f"{plate_number}_data.json"
 
-def save_to_json(filename):
-    car_data = {"Brand":brand, "Model":model, "Class":Class, "Year":year, "Type": type, "Color":color, "Weight":weight, "Gearbox":gear_box, "Engine":engine, "Hp":hp, "Plate_number": plate_number, "Km":km, "Condition":condition}
-    with open(filename, "w") as file_save:
-        file_save.write(json.dumps(car_data, indent=3))
-    file_save.close()
-save_to_json(file_name)
 
-'''brand = input("Brand: ")
+
+'''         brand = input("Brand: ")
             model = input("Model: ")
             Class = input("Class: ")
             year = input("Year: ")
