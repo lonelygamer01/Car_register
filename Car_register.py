@@ -1,4 +1,5 @@
 
+from msilib.schema import Condition
 import time
 import json
 import sys
@@ -35,6 +36,7 @@ class Console_App:
             Password = data["Password"]
             if Username != "" and Password != "":
                 print("You already have an account please Log-In to it!")
+                Console_App.starting_page()
             else:    
 
 
@@ -122,6 +124,270 @@ class Console_App:
         plate_number_to_json = "{}_data.json".format(plate_number)
 
         get_info(plate_number_to_json)
+    #define editing car data methods
+    def edit_details():
+        print("Enter the number from the list below, what you would like to change in the database of you car!")
+        print("1. Edit Brand\n2. Edit Model\n3. Edit Class\n4. Edit Year\n5. Edit Type\n6. Edit Color\n7. Edit Weight\n8. Edit Gear Box\n9. Edit Engine\n10. Edit Horsepower\n11. Edit Kilometer\n12. Edit Condition")
+        #Asking for an imput from the user
+        select_number3 = int(input("Enter the number: \n"))
+        
+        if select_number3 == 1:
+            print("You are about to change the brand of the car")
+            open_file = input("Enter the platenumber of the car, please make sure you enter it correctly!\n")
+
+            try: 
+                file = open(f"{open_file}_data.json", "r")
+                json_object = json.load(file)
+                file.close()
+                brand = input("Enter the new Brand: ")
+
+                json_object["Brand"] = brand
+                file = open(f"{open_file}_data.json", "w")
+                json.dump(json_object, file, indent=2)
+                file.close()
+                print("Updating...")
+                time.sleep(2)
+                print("Data updated successfully...")
+
+            except:
+                print("Faield to reach the file, no such a file...")
+
+        elif select_number3 == 2:
+            print("You are about to change the model of the car")
+            open_file = input("Enter the platenumber of the car, please make sure you enter it correctly!\n")
+
+            try: 
+                file = open(f"{open_file}_data.json", "r")
+                json_object = json.load(file)
+                file.close()
+                model = input("Enter the new Model: ")
+
+                json_object["Model"] = model
+                file = open(f"{open_file}_data.json", "w")
+                json.dump(json_object, file, indent=2)
+                file.close()
+                print("Updating...")
+                time.sleep(2)
+                print("Data updated successfully...")
+
+            except:
+                print("Faield to reach the file, no such a file...")
+            
+
+        elif select_number3 == 3:
+            print("You are about to change the class of the car")
+            open_file = input("Enter the platenumber of the car, please make sure you enter it correctly!\n")
+
+            try: 
+                file = open(f"{open_file}_data.json", "r")
+                json_object = json.load(file)
+                file.close()
+                Class = input("Enter the new Class: ")
+
+                json_object["Class"] = Class
+                file = open(f"{open_file}_data.json", "w")
+                json.dump(json_object, file, indent=2)
+                file.close()
+                print("Updating...")
+                time.sleep(2)
+                print("Data updated successfully...")
+
+            except:
+                print("Faield to reach the file, no such a file...")
+            
+        elif select_number3 == 4:
+            print("You are about to change the year of the car")
+            open_file = input("Enter the platenumber of the car, please make sure you enter it correctly!\n")
+
+            try: 
+                file = open(f"{open_file}_data.json", "r")
+                json_object = json.load(file)
+                file.close()
+                year = input("Enter the new Year: ")
+
+                json_object["Year"] = year
+                file = open(f"{open_file}_data.json", "w")
+                json.dump(json_object, file, indent=2)
+                file.close()
+                print("Updating...")
+                time.sleep(2)
+                print("Data updated successfully...")
+
+            except:
+                print("Faield to reach the file, no such a file...")
+            
+        elif select_number3 == 5:
+            print("You are about to change the type of the car")
+            open_file = input("Enter the platenumber of the car, please make sure you enter it correctly!\n")
+
+            try: 
+                file = open(f"{open_file}_data.json", "r")
+                json_object = json.load(file)
+                file.close()
+                type = input("Enter the new type: ")
+
+                json_object["Type"] = type
+                file = open(f"{open_file}_data.json", "w")
+                json.dump(json_object, file, indent=2)
+                file.close()
+                print("Updating...")
+                time.sleep(2)
+                print("Data updated successfully...")
+
+            except:
+                print("Faield to reach the file, no such a file...")
+          
+        elif select_number3 == 6:
+            print("You are about to change the color of the car")
+            open_file = input("Enter the platenumber of the car, please make sure you enter it correctly!\n")
+
+            try: 
+                file = open(f"{open_file}_data.json", "r")
+                json_object = json.load(file)
+                file.close()
+                color = input("Enter the new Color: ")
+
+                json_object["Color"] = color
+                file = open(f"{open_file}_data.json", "w")
+                json.dump(json_object, file, indent=2)
+                file.close()
+                print("Updating...")
+                time.sleep(2)
+                print("Data updated successfully...")
+
+            except:
+                print("Faield to reach the file, no such a file...")
+           
+        elif select_number3 == 7:
+            print("You are about to change the Weight of the car")
+            open_file = input("Enter the platenumber of the car, please make sure you enter it correctly!\n")
+
+            try: 
+                file = open(f"{open_file}_data.json", "r")
+                json_object = json.load(file)
+                file.close()
+                weight = input("Enter the new Weight: ")
+
+                json_object["Weight"] = weight
+                file = open(f"{open_file}_data.json", "w")
+                json.dump(json_object, file, indent=2)
+                file.close()
+                print("Updating...")
+                time.sleep(2)
+                print("Data updated successfully...")
+
+            except:
+                print("Faield to reach the file, no such a file...")
+            
+
+        elif select_number3 == 8:
+            print("You are about to change the gearbox type of the car")
+            open_file = input("Enter the platenumber of the car, please make sure you enter it correctly!\n")
+
+            try: 
+                file = open(f"{open_file}_data.json", "r")
+                json_object = json.load(file)
+                file.close()
+                gearbox = input("Enter the new Gearbox type: ")
+
+                json_object["Gearbox"] = gearbox
+                file = open(f"{open_file}_data.json", "w")
+                json.dump(json_object, file, indent=2)
+                file.close()
+                print("Updating...")
+                time.sleep(2)
+                print("Data updated successfully...")
+
+            except:
+                print("Faield to reach the file, no such a file...")
+            
+
+        elif select_number3 == 9:
+            print("You are about to change the engine type of the car")
+            open_file = input("Enter the platenumber of the car, please make sure you enter it correctly!\n")
+
+            try: 
+                file = open(f"{open_file}_data.json", "r")
+                json_object = json.load(file)
+                file.close()
+                engine = input("Enter the new Engine tpye: ")
+
+                json_object["Engine"] = engine
+                file = open(f"{open_file}_data.json", "w")
+                json.dump(json_object, file, indent=2)
+                file.close()
+                print("Updating...")
+                time.sleep(2)
+                print("Data updated successfully...")
+
+            except:
+                print("Faield to reach the file, no such a file...")
+            
+        elif select_number3 == 10:
+            print("You are about to change the horsepower of the car")
+            open_file = input("Enter the platenumber of the car, please make sure you enter it correctly!\n")
+
+            try: 
+                file = open(f"{open_file}_data.json", "r")
+                json_object = json.load(file)
+                file.close()
+                horsepower = input("Enter the new Horsepower: ")
+
+                json_object["Hp"] = horsepower
+                file = open(f"{open_file}_data.json", "w")
+                json.dump(json_object, file, indent=2)
+                file.close()
+                print("Updating...")
+                time.sleep(2)
+                print("Data updated successfully...")
+
+            except:
+                print("Faield to reach the file, no such a file...")
+            
+        elif select_number3 == 11:
+            print("You are about to change the kilometer of the car")
+            open_file = input("Enter the platenumber of the car, please make sure you enter it correctly!\n")
+
+            try: 
+                file = open(f"{open_file}_data.json", "r")
+                json_object = json.load(file)
+                file.close()
+                km = input("Enter the new Kilometers: ")
+
+                json_object["Km"] = km
+                file = open(f"{open_file}_data.json", "w")
+                json.dump(json_object, file, indent=2)
+                file.close()
+                print("Updating...")
+                time.sleep(2)
+                print("Data updated successfully...")
+
+            except:
+                print("Faield to reach the file, no such a file...")
+           
+        elif select_number3 == 12:
+            print("You are about to change the condition of the car")
+            open_file = input("Enter the platenumber of the car, please make sure you enter it correctly!\n")
+
+            try: 
+                file = open(f"{open_file}_data.json", "r")
+                json_object = json.load(file)
+                file.close()
+                condition = input("Enter the new Condition: ")
+
+                json_object["Condition"] = condition
+                file = open(f"{open_file}_data.json", "w")
+                json.dump(json_object, file, indent=2)
+                file.close()
+                print("Updating...")
+                time.sleep(2)
+                print("Data updated successfully...")
+
+            except:
+                print("Faield to reach the file, no such a file...")
+           
+        else:
+            print("Please enter a valid number FROM THE LIST ABOVE")    
     #define editing username method
     def edit_username():
         old_username = input("Enter the current username:\n")
@@ -221,9 +487,9 @@ if select_number1 == 2:
             
         #Editing a cars details in the database DEVELOPMENT
         if select_number2 == 3:
-            print("Enter the number from the list below, what you would like to change in the database of you car!")
-            print("1. Edit Brand\n2. Edit Modle\n3. Edit Class\n3. Edit Year\n4. Edit Type\n5. Edit Color\n6. Edit Weight\n7. Edit Gear Box\n8. Edit Engine\n9. Edit Horsepower\n10. Edit Kilometer\n11. Edit Condition")
-            open_file = input("Enter the platenumber of the car, please make sure you enter it correctly!\n")
+            Console_App.edit_details()
+            
+
             #file = f"{open_file}_data.json"
 
         #Editing username FINISHED
