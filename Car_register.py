@@ -7,8 +7,7 @@ import sys
 
 #making a class for the app so the user can navigate on the pages...
 class Console_App:
-    def anyad():
-        print("ANYÁD")
+
     #define the loading page
     def loading_page():
         animation = "|-"
@@ -25,7 +24,7 @@ class Console_App:
     def starting_page():
         print("\nEnter a number from the menu")
         time.sleep(1)
-        print("0. Print ANYÁD")
+        
         print("1. Register")
         print("2. Log-In")
     #define the register module
@@ -463,8 +462,7 @@ time.sleep(1)
 
 select_number1 = int(input("Enter the number: \n"))
 
-if select_number1 == 0:
-    Console_App.anyad()
+
 
 
 if select_number1 == 1:

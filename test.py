@@ -6,16 +6,19 @@ import json
 
 class Console_App:
     
-    def login_page(self):
-        print("Nem")
-    def register_page(self):
-        print("Igen")
+
+        
+        def login_page(self):
+            print("Nem")
+        def register_page(self):
+            print("Igen")
         
 
         
 
             
-
+app = Console_App()
+app.login_page()
 
 
 
